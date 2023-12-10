@@ -5,15 +5,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-       - uses: action/checkout@v2
+       - uses: actions/checkout@v2
        - run: python hello.py
     
   build:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
-      - uses: action/checkout@upload-artifact@v2
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@upload-artifact@v2
         with:
           name: hello
           path: . 
